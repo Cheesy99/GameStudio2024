@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlaneController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlaneController : MonoBehaviour
     public float responsiveness = 10f;
     [Tooltip("How much lift the plane generates as it gains speed.")]
     public float lift = 135f;
+    
+    // Compase
+    [SerializeField] private Image compassImage;
 
     private float throttle;  // Percentage of throttle
     private float roll;      // Tilting left ti right.
@@ -59,20 +63,29 @@ public class PlaneController : MonoBehaviour
     {
         HandleInput();
         UpdateHUD();
-
+        UpdateCompass();
         propeller.Rotate(Vector3.right * throttle / 2f);
         engineSound.volume = throttle * 0.01f;
     }
 
     private void FixedUpdate()
     {
-        //Apply forces to the plane
-        rb.AddForce(transform.forward * throttle * maxThrust);
+        //Apply forward force to the plane
+        rb.AddForce(-transform.right * throttle * maxThrust);
+        
+        // Apply rotational forces to the plane
         rb.AddTorque(transform.up * yaw * responseModifier);
         rb.AddTorque(transform.right * roll * responseModifier);
         rb.AddTorque(-transform.forward * pitch * responseModifier);
         
+        // Apply lift to the plane
         rb.AddForce(Vector3.up * rb.velocity.magnitude * lift);
+    }
+
+    private void UpdateCompass()
+    {
+        float playerAngle = transform.eulerAngles.y;
+        compassImage.transform.rotation = Quaternion.Euler(0, 0, playerAngle);
     }
 
     private void UpdateHUD()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using OpenCover.Framework.Model;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -17,6 +18,13 @@ public class PlaneController : MonoBehaviour
     public float responsiveness = 10f;
     [Tooltip("How much lift the plane generates as it gains speed.")]
     public float lift = 135f;
+    
+    [Header("Shooting")]
+    [Tooltip("The cube prefab to shoot.")]
+    public GameObject cubePrefab;
+
+    [Tooltip("The force with which the cube is shot.")]
+    public float shootingForce = 50f;
     
     // Compase
     [SerializeField] private Image compassImage;
@@ -55,10 +63,11 @@ public class PlaneController : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
         else if(Input.GetKey(KeyCode.LeftControl)) throttle -= throttleIncrement;
         throttle = Mathf.Clamp(throttle, 0f, 100f);
+        
+        // Handle Shooting
+        if (Input.GetKeyDown(KeyCode.F)) Fire();
     }
-    // Start is called before the first frame update
-
-    // Update is called once per frame
+    
     private void Update()
     {
         HandleInput();
@@ -93,5 +102,13 @@ public class PlaneController : MonoBehaviour
         hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
         hud.text += "Airspeed: " + (rb.velocity.magnitude * 3.6f).ToString("F0") + "km/h\n";
         hud.text += "Altitude: " + transform.position.y.ToString("F0") + "m";
+    }
+
+    private void Fire()
+    {
+        GameObject cube = Instantiate(cubePrefab, transform.position, Quaternion.identity);
+        
+        Rigidbody cubeRb = cube.GetComponent<Rigidbody>();
+        cubeRb.AddForce(-transform.up * shootingForce);
     }
 }

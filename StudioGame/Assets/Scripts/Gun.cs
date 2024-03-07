@@ -37,7 +37,10 @@ public class Gun : MonoBehaviour
             if (bulletRigidbody != null)
             {
                 // Set the velocity of the bullet based on the calculated direction and bullet speed
-                bulletRigidbody.velocity = Aircraft.velocity+(directionToTarget * bulletSpeed);
+                bulletRigidbody.velocity = new Vector3(Aircraft.velocity.x,Aircraft.velocity.y, 49.00f)+(directionToTarget * bulletSpeed);
+                
+            }else if(Input.GetKeyUp(KeyCode.O)){
+                
             }
             else
             {

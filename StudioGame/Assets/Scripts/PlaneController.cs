@@ -14,7 +14,9 @@ public class PlaneController : MonoBehaviour
     public float throttleIncrement = 0.1f;
     [Tooltip("Maximum engine thrust when at 100%")]
     public float maxThrust = 300f;
-    [Tooltip("How responsive the plane is when rolling, pitching, and yawing.")]
+    [Tooltip("How responsive the plane is when pitching.")]
+    private float pitchResponsiveness = 10f;
+    [Tooltip("How responsive the plane is when rolling, and yawing.")]
     public float responsiveness = 10f;
     [Tooltip("How much lift the plane generates as it gains speed.")]
     public float lift = 135f;
@@ -41,6 +43,7 @@ public class PlaneController : MonoBehaviour
             return (rb.mass / 10f) * responsiveness;
         }
     }
+    
     
     Rigidbody rb;
     AudioSource engineSound;
@@ -85,7 +88,7 @@ public class PlaneController : MonoBehaviour
         // Apply rotational forces to the plane
         rb.AddTorque(transform.up * yaw * responseModifier);
         rb.AddTorque(transform.right * roll * responseModifier);
-        rb.AddTorque(-transform.forward * pitch * responseModifier);
+        rb.AddTorque(-transform.forward * pitch * pitchResponsiveness);
         
         // Apply lift to the plane
         rb.AddForce(Vector3.up * rb.velocity.magnitude * lift);

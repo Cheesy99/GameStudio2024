@@ -6,50 +6,21 @@ public class Gun : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10;
     public Rigidbody Aircraft;
-    public Transform target; // Assign the target in the Unity Editor
-
+    public float bulletSpeed = 0.3f;
+    
     void Update()
     {
+
+       
         if (Input.GetKeyDown(KeyCode.O))
         {
-            ShootBullet();
+           
+            var bullet = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation);
+            bullet.GetComponent<Rigidbody>().velocity=8*(bulletSpawnPoint.forward*bulletSpeed);
+            
         }
     }
 
-    void ShootBullet()
-    {
-        if (target != null)
-        {
-            // Calculate the direction from the bullet spawn point to the target
-            Vector3 directionToTarget = (target.position - bulletSpawnPoint.position).normalized;
-
-            // Create a rotation based on the direction
-            Quaternion rotation = Quaternion.LookRotation(directionToTarget);
-
-            // Instantiate the bullet with the calculated rotation
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, rotation);
-
-            // Get the rigidbody component of the bullet
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-
-            if (bulletRigidbody != null)
-            {
-                // Set the velocity of the bullet based on the calculated direction and bullet speed
-                bulletRigidbody.velocity = new Vector3(Aircraft.velocity.x,Aircraft.velocity.y, 49.00f)+(directionToTarget * bulletSpeed);
-                
-            }else if(Input.GetKeyUp(KeyCode.O)){
-                
-            }
-            else
-            {
-                Debug.LogWarning("Bullet is missing a Rigidbody component.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No target assigned. Please assign a target in the Unity Editor.");
-        }
-    }
+   
 }

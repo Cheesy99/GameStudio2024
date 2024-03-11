@@ -246,6 +246,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1539482507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &40610162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1053298716102155105, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+  m_PrefabInstance: {fileID: 1913318661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &40610164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40610162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0756959629847d88f135e6712ae19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 5112403345868107899, guid: d87eacee9f5314357b4730bcc8045a2b, type: 3}
+--- !u!1 &104932451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1053298716102155105, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+  m_PrefabInstance: {fileID: 7189347190996579137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &104932453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104932451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0756959629847d88f135e6712ae19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 5112403345868107899, guid: d87eacee9f5314357b4730bcc8045a2b, type: 3}
 --- !u!1 &477388296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1773,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1053298716102155105, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 40610164}
   m_SourcePrefab: {fileID: 100100000, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
 --- !u!850595691 &1960557393
 LightingSettings:
@@ -2455,7 +2494,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1053298716102155105, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 104932453}
   m_SourcePrefab: {fileID: 100100000, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

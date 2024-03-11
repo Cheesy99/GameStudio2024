@@ -63,9 +63,9 @@ public class PlaneController : MonoBehaviour
         yaw = Input.GetAxis("Yaw");
 
         // Handle throttle value being sure to clamp it between 0 and 100
-        if(Input.GetKey(KeyCode.Space)) throttle += 60;
+        if(Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
         else if(Input.GetKey(KeyCode.LeftControl)) throttle -= throttleIncrement;
-        throttle = Mathf.Clamp(throttle, 0f, 100f);
+        throttle = Mathf.Clamp(throttle, 0f, 10f);
         
         // Handle Shooting
         if (Input.GetKeyDown(KeyCode.F)) Fire();
@@ -76,7 +76,7 @@ public class PlaneController : MonoBehaviour
         HandleInput();
         UpdateHUD();
         UpdateCompass();
-        propeller.Rotate(Vector3.right * throttle / 2f);
+        propeller.Rotate(Vector3.right * (throttle + 10));
         engineSound.volume = throttle * 0.01f;
     }
 

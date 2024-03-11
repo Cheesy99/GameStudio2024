@@ -1766,6 +1766,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7635195892100945180, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3812ec0ee2f17ef41b0c5ec2438d5c69, type: 3}
     - target: {fileID: 8848892441833866842, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
       propertyPath: m_Name
       value: GunR
@@ -2487,6 +2491,10 @@ PrefabInstance:
       propertyPath: Aircraft
       value: 
       objectReference: {fileID: 1539482504}
+    - target: {fileID: 7635195892100945180, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3812ec0ee2f17ef41b0c5ec2438d5c69, type: 3}
     - target: {fileID: 8848892441833866842, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
       propertyPath: m_Name
       value: GunL

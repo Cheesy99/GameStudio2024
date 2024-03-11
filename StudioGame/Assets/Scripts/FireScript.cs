@@ -13,9 +13,11 @@ public class FireScript : MonoBehaviour
         FireParicParticleSystem = GetComponent<ParticleSystem>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         Debug.Log("Trigger detected: "+ other.gameObject.name);
+        if (other.gameObject.layer != LayerMask.NameToLayer("Bullet"))
+            return;
         var main = FireParicParticleSystem.main;
         float currentSize = main.startSize.constant;
         currentSize -= 300f; // Decrease the start size by 10 each time a collision occurs
@@ -23,5 +25,13 @@ public class FireScript : MonoBehaviour
         main.startSize = currentSize;
         // Change the start color to white
         main.startColor = Color.white;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Trigger stay detected BULLET: "+ other.gameObject.name);
+        if (other.gameObject.layer != LayerMask.NameToLayer("Bullet"))
+            return;
+        Debug.Log("Trigger stay detected BULLET: "+ other.gameObject.name);
     }
 }

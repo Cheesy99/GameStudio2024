@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7831078676065322527}
   - component: {fileID: 6063225699346655809}
   - component: {fileID: 3999198307561135532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire Medium
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4847,7 +4847,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

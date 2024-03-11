@@ -11,14 +11,22 @@ public class FireScript : MonoBehaviour
     private void Awake()
     {
         FireParicParticleSystem = GetComponent<ParticleSystem>();
-    }                                              
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger detected: "+other.gameObject.name);
+    }
+
     private void OnCollisionEnter(Collision collision)
 {
-    Debug.Log("Collision detected");
+    Debug.Log("Collision detected: "+collision.gameObject.name);
     var main = FireParicParticleSystem.main;
     float currentSize = main.startSize.constant;
     currentSize -= 10f; // Decrease the start size by 10 each time a collision occurs
     if (currentSize < 0) currentSize = 0; // Ensure the start size doesn't go below 0
     main.startSize = currentSize;
+    // Change the start color to white
+    main.startColor = Color.white;
 }
 }

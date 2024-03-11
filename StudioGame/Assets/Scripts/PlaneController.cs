@@ -11,7 +11,7 @@ public class PlaneController : MonoBehaviour
     
     [Header("Plane Stats")]
     [Tooltip("How much the throttle ramps up or down per frame.")] 
-    public float throttleIncrement = 0.1f;
+    public float throttleIncrement = 1f;
     [Tooltip("Maximum engine thrust when at 100%")]
     public float maxThrust = 300f;
     [Tooltip("How responsive the plane is when pitching.")]
@@ -63,7 +63,7 @@ public class PlaneController : MonoBehaviour
         yaw = Input.GetAxis("Yaw");
 
         // Handle throttle value being sure to clamp it between 0 and 100
-        if(Input.GetKey(KeyCode.Space)) throttle += 60;
+        if(Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
         else if(Input.GetKey(KeyCode.LeftControl)) throttle -= throttleIncrement;
         throttle = Mathf.Clamp(throttle, 0f, 100f);
         
@@ -73,7 +73,7 @@ public class PlaneController : MonoBehaviour
     
     private void Update()
     {
-        HandleInput();
+        
         UpdateHUD();
         UpdateCompass();
         propeller.Rotate(Vector3.right * throttle / 2f);
@@ -82,6 +82,7 @@ public class PlaneController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        HandleInput();
         //Apply forward force to the plane
         rb.AddForce(-transform.right * throttle * maxThrust);
         

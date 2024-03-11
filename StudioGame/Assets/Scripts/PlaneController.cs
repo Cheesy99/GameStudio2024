@@ -11,7 +11,7 @@ public class PlaneController : MonoBehaviour
     
     [Header("Plane Stats")]
     [Tooltip("How much the throttle ramps up or down per frame.")] 
-    public float throttleIncrement = 0.1f;
+    public float throttleIncrement = 1f;
     [Tooltip("Maximum engine thrust when at 100%")]
     public float maxThrust = 300f;
     [Tooltip("How responsive the plane is when pitching.")]
@@ -82,6 +82,7 @@ public class PlaneController : MonoBehaviour
 
     private void FixedUpdate()
     {
+       
         //Apply forward force to the plane
         rb.AddForce(-transform.right * throttle * maxThrust);
         

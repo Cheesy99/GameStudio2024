@@ -6,12 +6,13 @@ using UnityEngine;
 
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class Camera : MonoBehaviour
 {
    
     public Transform mainCamera;
     public Transform  cameraPosition;
-    float cameraSmooth =4;
+    float cameraSmooth = 4;
+    
     
     void Update()
     {

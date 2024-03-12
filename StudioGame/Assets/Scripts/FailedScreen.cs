@@ -9,6 +9,7 @@ public class FailedScreen : MonoBehaviour
     public GameObject failedPanel;
     // Start is called before the first frame update
 
+    public Camera mainCamera;
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +23,7 @@ public class FailedScreen : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Level_1");
         GameManager.getInstance().State = GameState.Playing;
+        
     }
     
     public void GoToMenu()

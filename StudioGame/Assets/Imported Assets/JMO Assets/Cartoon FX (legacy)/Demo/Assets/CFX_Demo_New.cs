@@ -48,8 +48,8 @@ public class CFX_Demo_New : MonoBehaviour
 		particleExampleList.Sort( delegate(GameObject o1, GameObject o2) { return o1.name.CompareTo(o2.name); } );
 		ParticleExamples = particleExampleList.ToArray();
 		
-		defaultCamPosition = Camera.main.transform.position;
-		defaultCamRotation = Camera.main.transform.rotation;
+		defaultCamPosition = UnityEngine.Camera.main.transform.position;
+		defaultCamRotation = UnityEngine.Camera.main.transform.rotation;
 		
 		StartCoroutine("CheckForDeletedParticles");
 		
@@ -74,7 +74,7 @@ public class CFX_Demo_New : MonoBehaviour
 		if(Input.GetMouseButtonDown(0))
 		{
 			RaycastHit hit = new RaycastHit();
-			if(groundCollider.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 9999f))
+			if(groundCollider.Raycast(UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 9999f))
 			{
 				GameObject particle = spawnParticle();
 				particle.transform.position = hit.point + particle.transform.position;
@@ -84,13 +84,13 @@ public class CFX_Demo_New : MonoBehaviour
 		float scroll = Input.GetAxis("Mouse ScrollWheel");
 		if(scroll != 0f)
 		{
-			Camera.main.transform.Translate(Vector3.forward * (scroll < 0f ? -1f : 1f), Space.Self);
+			UnityEngine.Camera.main.transform.Translate(Vector3.forward * (scroll < 0f ? -1f : 1f), Space.Self);
 		}
 		
 		if(Input.GetMouseButtonDown(2))
 		{
-			Camera.main.transform.position = defaultCamPosition;
-			Camera.main.transform.rotation = defaultCamRotation;
+			UnityEngine.Camera.main.transform.position = defaultCamPosition;
+			UnityEngine.Camera.main.transform.rotation = defaultCamRotation;
 		}
 	}
 

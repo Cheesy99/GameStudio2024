@@ -103,12 +103,21 @@ public class PlaneController : MonoBehaviour
 
     private void UpdateHUD()
     {
-        hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
+        hud.text = "0";
+        if (throttle == 0)
+        {
+            hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
+        }
+        else
+        {
+            hud.text = "Throttle " + throttle.ToString("F0") + "0" + "%\n";
+        }
+
         hud.text += "Airspeed: " + (rb.velocity.magnitude * 3.6f).ToString("F0") + "km/h\n";
         hud.text += "Altitude: " + transform.position.y.ToString("F0") + "m";
     }
 
-    private void Fire()
+    private void Fire() 
     {
         GameObject cube = Instantiate(cubePrefab, transform.position, Quaternion.identity);
         

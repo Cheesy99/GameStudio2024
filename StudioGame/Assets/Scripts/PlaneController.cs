@@ -36,6 +36,7 @@ public class PlaneController : MonoBehaviour
     private float roll;      // Tilting left ti right.
     private float pitch;     // Tilting up or down.
     private float yaw;      // Turning left or right.
+    private Vector3 lastPosition;
     
 
     private float responseModifier { // Value used to tweak the responsiveness of the plane
@@ -79,6 +80,8 @@ public class PlaneController : MonoBehaviour
         UpdateCompass();
         propeller.Rotate(Vector3.right * (throttle + 10));
         engineSound.volume = throttle * 0.01f;
+
+        lastPosition = transform.position; // Save the last position of the plane
     }
 
     private void FixedUpdate()
@@ -128,7 +131,13 @@ public class PlaneController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (transform.position.y <= 5.0f) return;
+       Vector3 collisionDirection = transform.position - lastPosition;
+           collisionDirection.y = 0; // Ignore y axis
+       
+           if (collisionDirection.magnitude <= 0.01f) return; // Ignore minor collisions
+       
+           if (transform.position.y <= 5.0f) return;
+           
         GameManager.getInstance().State = GameState.Lost;
         
         // Instantiate the explosion effect at the plane's position

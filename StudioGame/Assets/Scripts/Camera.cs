@@ -15,8 +15,9 @@ public class NewBehaviourScript : MonoBehaviour
     
     void Update()
     {
-     updateMaincamera();
-        
+        if (PlaneController.hasCollided)
+            return;
+        updateMaincamera();
     }
 
     void updateMaincamera(){

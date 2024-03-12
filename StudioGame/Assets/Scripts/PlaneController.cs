@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using OpenCover.Framework.Model;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 
 public class PlaneController : MonoBehaviour
 {
@@ -20,11 +17,15 @@ public class PlaneController : MonoBehaviour
     public float responsiveness = 10f;
     [Tooltip("How much lift the plane generates as it gains speed.")]
     public float lift = 135f;
+
+    public static bool hasCollided = false;
     
     [Header("Shooting")]
     [Tooltip("The cube prefab to shoot.")]
     public GameObject cubePrefab;
 
+    [Tooltip("The explosion effect to instantiate when a collision occurs.")]
+    public GameObject explosionPrefab;
     [Tooltip("The force with which the cube is shot.")]
     public float shootingForce = 50f;
     
@@ -123,5 +124,33 @@ public class PlaneController : MonoBehaviour
         
         Rigidbody cubeRb = cube.GetComponent<Rigidbody>();
         cubeRb.AddForce(-transform.up * shootingForce);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (transform.position.y <= 5.0f) return;
+        GameManager.getInstance().State = GameState.Lost;
+        
+        // Instantiate the explosion effect at the plane's position
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        // Disable the plane's renderer and collider to make it disappear
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        foreach (Transform child in transform)
+        {
+            // Instantiate the explosion effect at the child's position
+            Instantiate(explosionPrefab, child.position, Quaternion.identity);
+
+            // Disable the child's renderer and collider to make it disappear
+            if (child.GetComponent<Renderer>() != null)
+                child.GetComponent<Renderer>().enabled = false;
+            
+            if (child.GetComponent<Collider>() != null)
+                child.GetComponent<Collider>().enabled = false;
+            
+        }
+
+        hasCollided = true;
     }
 }

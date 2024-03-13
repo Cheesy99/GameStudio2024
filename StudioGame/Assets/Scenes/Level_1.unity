@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &203899578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 203899580}
+  - component: {fileID: 203899579}
+  m_Layer: 0
+  m_Name: FireController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &203899579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203899578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2847b2150ad24bfe8450df35ab133b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBar: {fileID: 1655078822}
+--- !u!4 &203899580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203899578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1164.9954, y: 41, z: 1834.4014}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &310183151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2818,6 +2863,10 @@ PrefabInstance:
       propertyPath: compassImage
       value: 
       objectReference: {fileID: 795352624}
+    - target: {fileID: 8494046763691990464, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: waterLevelSlider
+      value: 
+      objectReference: {fileID: 973126582}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3113,3 +3162,4 @@ SceneRoots:
   - {fileID: 1739543576}
   - {fileID: 1160755276}
   - {fileID: 1250433496}
+  - {fileID: 203899580}

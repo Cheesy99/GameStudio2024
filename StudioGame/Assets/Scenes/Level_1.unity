@@ -863,6 +863,17 @@ Transform:
   - {fileID: 825141290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787134174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1702008610427920445, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+  m_PrefabInstance: {fileID: 2845845351847627591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a183380119b4d2b9aa1b0c32b8d433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &795352623 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4240819279715278896, guid: 8101983c09dd18c40b47c3de663a27c3, type: 3}
@@ -1002,7 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failedPanel: {fileID: 427152833}
-  mainCamera: {fileID: 0}
+  WonPanel: {fileID: 0}
 --- !u!1 &853021648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &853021649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1410,6 +1421,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939c11a77a84cc04fbe734483218ba83, type: 3}
+--- !u!114 &1176420740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 311791580790232518, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+  m_PrefabInstance: {fileID: 2845845351847627591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38416908537a441339175e28b22c1c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1250433496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2013,6 +2035,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2034111536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034111538}
+  - component: {fileID: 2034111537}
+  m_Layer: 0
+  m_Name: WaterController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2034111537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034111536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fb04634826c5a49957d5f1f12807d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterBar: {fileID: 973126582}
+  gun: {fileID: 787134174}
+  waterBomb: {fileID: 1176420740}
+--- !u!4 &2034111538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034111536}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 133.04738, y: 153.26866, z: 238.2472}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &519438025353872951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2200,7 +2269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4676178242337145918, guid: 468893aadffe0d44ab91f67fc4cdd49b, type: 3}
       propertyPath: m_Name
-      value: Health Bar
+      value: Water Bar
       objectReference: {fileID: 0}
     - target: {fileID: 4698207400305236279, guid: 468893aadffe0d44ab91f67fc4cdd49b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2303,6 +2372,10 @@ PrefabInstance:
       propertyPath: waterLevelSlider
       value: 
       objectReference: {fileID: 973126582}
+    - target: {fileID: 9203888056196225909, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: m_Name
+      value: WaterBomb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2886,3 +2959,4 @@ SceneRoots:
   - {fileID: 1160755276}
   - {fileID: 1250433496}
   - {fileID: 203899580}
+  - {fileID: 2034111538}

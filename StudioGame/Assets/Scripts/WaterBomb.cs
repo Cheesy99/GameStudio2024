@@ -1,8 +1,9 @@
+
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 
-public class SpawnObjectsOnKeyPress : MonoBehaviour
+public class WaterBomb :  MonoBehaviour
 {
    
     public GameObject objectToSpawn;
@@ -19,16 +20,7 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && Gun.waterLevel >0)
-        {
-            isKeyPressed = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.X)|| Gun.waterLevel <=0)
-        {
-            isKeyPressed = false;
-        }
-
-        if (isKeyPressed)
+        if (Input.GetKey(KeyCode.X))
         {
             float stepSize = 0.4f / Mathf.Sqrt(numberOfInstances);
 
@@ -37,8 +29,7 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
                 float x = - 0.5f + (i % 10) * stepSize;
                 float y = - 0.5f + (i / 10) * stepSize;
                 float z = - 0.5f + (i / 100) * stepSize;
-                Gun.waterLevel -=0.1f;
-                 waterLevelSlider.value = Gun.waterLevel;
+                WaterController.Instance.BombDropped();
                 Vector3 spawnPosition = transform.position + transform.right*x +transform.up* y + transform.forward*z;
 
                 // Instantiate the object
@@ -52,7 +43,7 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
                 }
 
                 // Zerstöre die Instanz nach 3 Sekunden
-                Destroy(spawnedObject, 3f);
+                Destroy(spawnedObject, 5f);
             }
         }
     }

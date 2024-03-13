@@ -16,10 +16,7 @@ using UnityEngine.UI;
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else
-            Destroy(gameObject);
 
         fireScripts = new List<FireScript>();
     }

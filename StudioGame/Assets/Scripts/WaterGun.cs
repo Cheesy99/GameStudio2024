@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Gun : MonoBehaviour
+public class WaterGun : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    public Slider waterLevelSlider;
-    
     public float bulletSpeed = 0.3f;
-    public static float  waterLevel = 100f;
 
    
     
@@ -33,17 +30,16 @@ public class Gun : MonoBehaviour
     {
 
        
-        if (Input.GetKeyDown(KeyCode.O) && waterLevel > 0)
+        if (Input.GetKeyDown(KeyCode.O))
         {
-
-           
+            
             var bullet = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity=8*(bulletSpawnPoint.forward*bulletSpeed);
            // aktiv sound
             PlaySound();
+            WaterController.Instance.GunShot();
 
-            waterLevel -= 0.1f;// Decrease the water level
-            waterLevelSlider.value = waterLevel;
+           
         }
 
           

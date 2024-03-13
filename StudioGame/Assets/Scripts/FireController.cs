@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
     public Slider fireBar;
     private List<FireScript> fireScripts;
+    private float maxFireSize;
 
     private void Awake()
     {
@@ -28,6 +29,10 @@ using UnityEngine.UI;
         if (!fireScripts.Contains(fireScript))
         {
             fireScripts.Add(fireScript);
+            var main = fireScript.FireParicParticleSystem.main;
+            maxFireSize += main.startSize.constant;
+            fireBar.maxValue = maxFireSize;
+            fireBar.value = 0;
         }
     }
 

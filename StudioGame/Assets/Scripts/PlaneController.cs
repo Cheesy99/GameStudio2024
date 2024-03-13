@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -55,6 +56,12 @@ public class PlaneController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         engineSound = GetComponent<AudioSource>();
+        hasCollided = false;
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Level2") // replace "Level2" with the actual name of your level 2 scene
+        {
+            throttle = 100f;
+        }
     }
     
     private void HandleInput()

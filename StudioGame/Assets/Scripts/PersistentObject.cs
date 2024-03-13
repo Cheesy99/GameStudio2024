@@ -5,7 +5,6 @@ public class PersistentObjects : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject plane;
-    
     public GameObject camera;
     public GameObject fireController;
     public GameObject waterController;

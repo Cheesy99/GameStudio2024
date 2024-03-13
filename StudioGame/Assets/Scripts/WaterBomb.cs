@@ -11,16 +11,14 @@ public class WaterBomb :  MonoBehaviour
     
     public int numberOfInstances =10;
     public float spawnRadius = 5;
-    private bool isKeyPressed = false;
-     
-    // gun instanz 
+    
     
      
   
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.X) && WaterController.Instance.getWaterLevel() >= 0)
         {
             float stepSize = 0.4f / Mathf.Sqrt(numberOfInstances);
 

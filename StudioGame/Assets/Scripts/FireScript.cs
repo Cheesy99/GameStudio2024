@@ -49,16 +49,5 @@ public class FireScript : MonoBehaviour
             fireCollider.enabled = false;
         }
         main.startSize = currentSize;
-        
-        // Change the start color to white
-        main.startColor = Color.white;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("Trigger stay detected BULLET: "+ other.gameObject.name);
-        if (other.gameObject.layer != LayerMask.NameToLayer("Bullet"))
-            return;
-        Debug.Log("Trigger stay detected BULLET: "+ other.gameObject.name);
     }
 }

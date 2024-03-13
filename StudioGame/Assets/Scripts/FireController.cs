@@ -19,6 +19,8 @@ using UnityEngine.UI;
         }
         else
             Destroy(gameObject);
+
+        fireScripts = new List<FireScript>();
     }
 
     public void RegisterFire(FireScript fireScript)
@@ -31,11 +33,11 @@ using UnityEngine.UI;
 
     private void Update()
     {
-        float totalFireSize = 100;
+        float totalFireSize = 0;
         foreach (var FireScript in fireScripts)
         {
             var main = FireScript.FireParicParticleSystem.main;
-            totalFireSize -= main.startSize.constant;
+            totalFireSize += main.startSize.constant;
         }
         fireBar.value = totalFireSize;
     }

@@ -31,4 +31,11 @@ public class FailedScreen : MonoBehaviour
         SceneManager.LoadSceneAsync("Menu");
         GameManager.getInstance().State = GameState.Menu;
     }
+    
+     public void LoadLevel_2_Game()
+        {
+            SceneManager.LoadSceneAsync("Level_2");
+            GameManager.getInstance().State = GameState.Playing;
+            
+        }
 }

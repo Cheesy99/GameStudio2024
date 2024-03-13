@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 103156976}
   - component: {fileID: 103156975}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 825141295}
         m_TargetAssemblyTypeName: FailedScreen, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: LoadLevel_2_Game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &853021649
 RectTransform:
   m_ObjectHideFlags: 0

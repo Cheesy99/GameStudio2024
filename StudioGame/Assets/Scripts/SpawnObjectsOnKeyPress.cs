@@ -19,11 +19,11 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && Gun.waterLevel >0)
         {
             isKeyPressed = true;
         }
-        else if (Input.GetKeyUp(KeyCode.X))
+        else if (Input.GetKeyUp(KeyCode.X)|| Gun.waterLevel <=0)
         {
             isKeyPressed = false;
         }

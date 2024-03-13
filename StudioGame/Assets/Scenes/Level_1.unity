@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.6011936, g: 0.31686804, b: 0.29051062, a: 1}
+  m_IndirectSpecularColor: {r: 0.6011967, g: 0.3168739, b: 0.2905052, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2803,7 +2803,15 @@ PrefabInstance:
       propertyPath: objectToSpawn
       value: 
       objectReference: {fileID: 969798982}
+    - target: {fileID: 311791580790232518, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: waterLevelSlider
+      value: 
+      objectReference: {fileID: 973126582}
     - target: {fileID: 1702008610427920445, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: waterLevelSlider
+      value: 
+      objectReference: {fileID: 973126582}
+    - target: {fileID: 1931653321260226713, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: waterLevelSlider
       value: 
       objectReference: {fileID: 973126582}
@@ -2863,6 +2871,10 @@ PrefabInstance:
       propertyPath: compassImage
       value: 
       objectReference: {fileID: 795352624}
+    - target: {fileID: 8209964142474476064, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: waterLevelSlider
+      value: 
+      objectReference: {fileID: 973126582}
     - target: {fileID: 8494046763691990464, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: waterLevelSlider
       value: 
@@ -3088,7 +3100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408760320626625894, guid: 8bd93d6d5ac6a4fd6a1ea0215035d975, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2070505409830136749, guid: 8bd93d6d5ac6a4fd6a1ea0215035d975, type: 3}
       propertyPath: m_Name

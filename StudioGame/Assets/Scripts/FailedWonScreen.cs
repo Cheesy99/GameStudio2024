@@ -26,9 +26,9 @@ public class FailedScreen : MonoBehaviour
     
     public void RestartGame()
     {
-        SceneManager.LoadSceneAsync("Level_1");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadSceneAsync(currentSceneName);
         GameManager.getInstance().State = GameState.Playing;
-        
     }
     
     public void GoToMenu()
@@ -36,11 +36,9 @@ public class FailedScreen : MonoBehaviour
         SceneManager.LoadSceneAsync("Menu");
         GameManager.getInstance().State = GameState.Menu;
     }
-    
-     public void LoadLevel_2_Game()
-        {
-            SceneManager.LoadSceneAsync("Level_2");
-            GameManager.getInstance().State = GameState.Playing;
-            
-        }
+
+    public void NextGame()
+    {
+        PersistentObjects.LoadScene("test");
+    }
 }

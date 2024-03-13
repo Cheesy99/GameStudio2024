@@ -39,6 +39,6 @@ public class FailedScreen : MonoBehaviour
 
     public void NextGame()
     {
-        PersistentObjects.LoadScene("test");
+        SceneManager.LoadScene("Level_2");
     }
 }

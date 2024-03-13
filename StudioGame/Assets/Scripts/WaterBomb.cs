@@ -7,7 +7,6 @@ public class WaterBomb :  MonoBehaviour
 {
    
     public GameObject objectToSpawn;
-    public UnityEngine.UI.Slider waterLevelSlider;
     
     public int numberOfInstances =10;
     public float spawnRadius = 5;

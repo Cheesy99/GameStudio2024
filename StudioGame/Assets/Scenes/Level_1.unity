@@ -535,8 +535,6 @@ RectTransform:
   - {fileID: 795352623}
   - {fileID: 973126581}
   - {fileID: 1655078821}
-  - {fileID: 1072461262}
-  - {fileID: 1142509932}
   - {fileID: 853021649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1365,8 +1363,36 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 825141290}
+    m_TransformParent: {fileID: 973126581}
     m_Modifications:
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.3320105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269249711973179188, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 1895781632
+      objectReference: {fileID: 0}
     - target: {fileID: 3837957875293048219, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
       propertyPath: m_Name
       value: Water Label
@@ -1433,11 +1459,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154728905489157528, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -300
+      value: -235.14648
       objectReference: {fileID: 0}
     - target: {fileID: 5154728905489157528, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -120
+      value: -62.66327
       objectReference: {fileID: 0}
     - target: {fileID: 5154728905489157528, guid: 506d9bf302c80fe49900e549b39d6c46, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1663,7 +1689,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1708633358170787270, guid: 468893aadffe0d44ab91f67fc4cdd49b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1142509932}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468893aadffe0d44ab91f67fc4cdd49b, type: 3}
 --- !u!1001 &2845845351847627591
@@ -2169,7 +2198,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8851321374930305039, guid: e1be9d6712ea8c841a79a124e1060a06, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1072461262}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1be9d6712ea8c841a79a124e1060a06, type: 3}
 --- !u!1001 &9080517674205398891
@@ -2178,8 +2210,24 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 825141290}
+    m_TransformParent: {fileID: 1655078821}
     m_Modifications:
+    - target: {fileID: 94469677445684692, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 94469677445684692, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.58431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 94469677445684692, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 94469677445684692, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 2501910783
+      objectReference: {fileID: 0}
     - target: {fileID: 5224857572782677855, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
       propertyPath: m_Name
       value: Fire Label
@@ -2246,11 +2294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553621386134098166, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -282.7
+      value: -217.84637
       objectReference: {fileID: 0}
     - target: {fileID: 8553621386134098166, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -207.5
+      value: -59.86328
       objectReference: {fileID: 0}
     - target: {fileID: 8553621386134098166, guid: ef40cdea1cd939749ba7b66fc91c97bb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

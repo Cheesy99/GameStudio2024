@@ -31,8 +31,11 @@ public class WaterBomb :  MonoBehaviour
                 Vector3 spawnPosition = transform.position + transform.right*x +transform.up* y + transform.forward*z;
 
                 // Instantiate the object
-                GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(Random.Range(0f,360f),Random.Range(0f,360f),Random.Range(0f,360f)));
-
+                GameObject spawnedObject = Instantiate(
+                    objectToSpawn, spawnPosition, 
+                    Quaternion.Euler(
+                        Random.Range(0f,360f),Random.Range(0f,360f),Random.Range(0f,360f)));
+                
                 // Check if the objectToSpawn is null (Prefab might be missing)
                 if (objectToSpawn == null)
                 {

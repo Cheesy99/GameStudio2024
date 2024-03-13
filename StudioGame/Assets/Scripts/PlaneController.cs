@@ -1,17 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using OpenCover.Framework.Model;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+
 
 public class PlaneController : MonoBehaviour
 {
     
     [Header("Plane Stats")]
     [Tooltip("How much the throttle ramps up or down per frame.")] 
-    public float throttleIncrement = 0.1f;
+    public float throttleIncrement = 1f;
     [Tooltip("Maximum engine thrust when at 100%")]
     public float maxThrust = 300f;
     [Tooltip("How responsive the plane is when pitching.")]
@@ -20,11 +17,15 @@ public class PlaneController : MonoBehaviour
     public float responsiveness = 10f;
     [Tooltip("How much lift the plane generates as it gains speed.")]
     public float lift = 135f;
+
+    public static bool hasCollided = false;
     
     [Header("Shooting")]
     [Tooltip("The cube prefab to shoot.")]
     public GameObject cubePrefab;
 
+    [Tooltip("The explosion effect to instantiate when a collision occurs.")]
+    public GameObject explosionPrefab;
     [Tooltip("The force with which the cube is shot.")]
     public float shootingForce = 50f;
     
@@ -35,6 +36,7 @@ public class PlaneController : MonoBehaviour
     private float roll;      // Tilting left ti right.
     private float pitch;     // Tilting up or down.
     private float yaw;      // Turning left or right.
+    private Vector3 lastPosition;
     
 
     private float responseModifier { // Value used to tweak the responsiveness of the plane
@@ -65,7 +67,7 @@ public class PlaneController : MonoBehaviour
         // Handle throttle value being sure to clamp it between 0 and 100
         if(Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
         else if(Input.GetKey(KeyCode.LeftControl)) throttle -= throttleIncrement;
-        throttle = Mathf.Clamp(throttle, 0f, 100f);
+        throttle = Mathf.Clamp(throttle, 0f, 10f);
         
         // Handle Shooting
         if (Input.GetKeyDown(KeyCode.F)) Fire();
@@ -76,12 +78,15 @@ public class PlaneController : MonoBehaviour
         HandleInput();
         UpdateHUD();
         UpdateCompass();
-        propeller.Rotate(Vector3.right * throttle / 2f);
+        propeller.Rotate(Vector3.right * (throttle + 10));
         engineSound.volume = throttle * 0.01f;
+
+        lastPosition = transform.position; // Save the last position of the plane
     }
 
     private void FixedUpdate()
     {
+       
         //Apply forward force to the plane
         rb.AddForce(-transform.right * throttle * maxThrust);
         
@@ -102,16 +107,59 @@ public class PlaneController : MonoBehaviour
 
     private void UpdateHUD()
     {
-        hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
+        hud.text = "0";
+        if (throttle == 0)
+        {
+            hud.text = "Throttle " + throttle.ToString("F0") + "%\n";
+        }
+        else
+        {
+            hud.text = "Throttle " + throttle.ToString("F0") + "0" + "%\n";
+        }
+
         hud.text += "Airspeed: " + (rb.velocity.magnitude * 3.6f).ToString("F0") + "km/h\n";
         hud.text += "Altitude: " + transform.position.y.ToString("F0") + "m";
     }
 
-    private void Fire()
+    private void Fire() 
     {
         GameObject cube = Instantiate(cubePrefab, transform.position, Quaternion.identity);
         
         Rigidbody cubeRb = cube.GetComponent<Rigidbody>();
         cubeRb.AddForce(-transform.up * shootingForce);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+       Vector3 collisionDirection = transform.position - lastPosition;
+           collisionDirection.y = 0; // Ignore y axis
+       
+           if (collisionDirection.magnitude <= 0.01f) return; // Ignore minor collisions
+       
+           if (transform.position.y <= 5.0f) return;
+           
+        GameManager.getInstance().State = GameState.Lost;
+        
+        // Instantiate the explosion effect at the plane's position
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        // Disable the plane's renderer and collider to make it disappear
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+        foreach (Transform child in transform)
+        {
+            // Instantiate the explosion effect at the child's position
+            Instantiate(explosionPrefab, child.position, Quaternion.identity);
+
+            // Disable the child's renderer and collider to make it disappear
+            if (child.GetComponent<Renderer>() != null)
+                child.GetComponent<Renderer>().enabled = false;
+            
+            if (child.GetComponent<Collider>() != null)
+                child.GetComponent<Collider>().enabled = false;
+            
+        }
+
+        hasCollided = true;
     }
 }

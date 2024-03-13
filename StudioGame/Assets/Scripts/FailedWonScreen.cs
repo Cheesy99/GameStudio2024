@@ -7,15 +7,20 @@ using UnityEngine.UI;
 public class FailedScreen : MonoBehaviour
 {
     public GameObject failedPanel;
-    // Start is called before the first frame update
 
-    public Camera mainCamera;
-    // Update is called once per frame
+    public GameObject WonPanel;
+    // Start is called before the first frame update
+    
     void Update()
     {
         if (GameManager.getInstance().State == GameState.Lost)
         {
             failedPanel.SetActive(true);
+        }
+
+        if (GameManager.getInstance().State == GameState.Won)
+        {
+            WonPanel.SetActive(true);
         }
     }
     

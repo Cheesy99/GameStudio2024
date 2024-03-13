@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FireScript : MonoBehaviour
 {
-    private ParticleSystem FireParicParticleSystem;
+    public ParticleSystem FireParicParticleSystem;
     private Collider fireCollider;
     // Start is called before the first frame update
     
@@ -13,6 +13,7 @@ public class FireScript : MonoBehaviour
     {
         FireParicParticleSystem = GetComponent<ParticleSystem>();
         fireCollider = GetComponent<Collider>();
+        FireController.Instance.RegisterFire(this);
     }
 
     private void OnCollisionEnter(Collision other)

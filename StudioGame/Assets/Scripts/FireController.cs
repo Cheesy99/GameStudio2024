@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+  public class FireController : MonoBehaviour
+{
+    public static FireController Instance { get; private set; }
+
+    public Slider fireBar;
+    private List<FireScript> fireScripts;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
+    public void RegisterFire(FireScript fireScript)
+    {
+        if (!fireScripts.Contains(fireScript))
+        {
+            fireScripts.Add(fireScript);
+        }
+    }
+
+    private void Update()
+    {
+        float totalFireSize = 100;
+        foreach (var FireScript in fireScripts)
+        {
+            var main = FireScript.FireParicParticleSystem.main;
+            totalFireSize -= main.startSize.constant;
+        }
+        fireBar.value = totalFireSize;
+    }
+}

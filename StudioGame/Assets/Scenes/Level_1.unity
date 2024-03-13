@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.6011936, g: 0.31686804, b: 0.29051062, a: 1}
+  m_IndirectSpecularColor: {r: 0.6011967, g: 0.3168739, b: 0.2905052, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 5112403345868107899, guid: d87eacee9f5314357b4730bcc8045a2b, type: 3}
+  waterLevelSlider: {fileID: 973126582}
 --- !u!1 &104932451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1053298716102155105, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 5112403345868107899, guid: d87eacee9f5314357b4730bcc8045a2b, type: 3}
+  waterLevelSlider: {fileID: 973126582}
 --- !u!1001 &310183151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,6 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failedPanel: {fileID: 427152833}
+  mainCamera: {fileID: 0}
 --- !u!1 &855761615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1359495606}
-  - component: {fileID: 1359495605}
+  - component: {fileID: 1359495607}
   m_Layer: 0
   m_Name: spawnPoint
   m_TagString: Untagged
@@ -1655,21 +1658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1359495605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359495604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38416908537a441339175e28b22c1c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 969798982}
-  numberOfInstances: 10
-  spawnRadius: 5
 --- !u!4 &1359495606
 Transform:
   m_ObjectHideFlags: 0
@@ -1685,6 +1673,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1539482507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1359495607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359495604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38416908537a441339175e28b22c1c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 969798982}
+  numberOfInstances: 20
+  spawnRadius: 10
 --- !u!1 &1449611274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,6 +3091,10 @@ PrefabInstance:
       propertyPath: soundClip
       value: 
       objectReference: {fileID: 8300000, guid: 3812ec0ee2f17ef41b0c5ec2438d5c69, type: 3}
+    - target: {fileID: 7635195892100945180, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
+      propertyPath: waterLevelSlider
+      value: 
+      objectReference: {fileID: 973126582}
     - target: {fileID: 8848892441833866842, guid: f5c6c87cdec4e486f804c2dfd1bc8f8c, type: 3}
       propertyPath: m_Name
       value: GunL

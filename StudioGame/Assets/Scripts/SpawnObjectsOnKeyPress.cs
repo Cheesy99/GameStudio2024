@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class SpawnObjectsOnKeyPress : MonoBehaviour
 {
+   
     public GameObject objectToSpawn;
-    public int numberOfInstances = 100;
-    public float spawnRadius = 0.5f;
+    public UnityEngine.UI.Slider waterLevelSlider;
+    
+    public int numberOfInstances =10;
+    public float spawnRadius = 5;
     private bool isKeyPressed = false;
+     
+    // gun instanz 
+    
+     
+  
 
     private void Update()
     {
@@ -28,7 +37,8 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
                 float x = - 0.5f + (i % 10) * stepSize;
                 float y = - 0.5f + (i / 10) * stepSize;
                 float z = - 0.5f + (i / 100) * stepSize;
-
+                Gun.waterLevel -=0.1f;
+                 waterLevelSlider.value = Gun.waterLevel;
                 Vector3 spawnPosition = transform.position + transform.right*x +transform.up* y + transform.forward*z;
 
                 // Instantiate the object

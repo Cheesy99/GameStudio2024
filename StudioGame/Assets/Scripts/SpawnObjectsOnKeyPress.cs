@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpawnObjectsOnKeyPress : MonoBehaviour
 {
@@ -24,14 +25,14 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
 
             for (int i = 0; i < numberOfInstances; i++)
             {
-                float x = transform.position.x - 0.5f + (i % 10) * stepSize;
-                float y = transform.position.y - 0.5f + (i / 10) * stepSize;
-                float z = transform.position.z - 0.5f + (i / 100) * stepSize;
+                float x = - 0.5f + (i % 10) * stepSize;
+                float y = - 0.5f + (i / 10) * stepSize;
+                float z = - 0.5f + (i / 100) * stepSize;
 
-                Vector3 spawnPosition = new Vector3(x, y, z);
+                Vector3 spawnPosition = transform.position + transform.right*x +transform.up* y + transform.forward*z;
 
                 // Instantiate the object
-                GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(Random.Range(0f,360f),Random.Range(0f,360f),Random.Range(0f,360f)));
 
                 // Check if the objectToSpawn is null (Prefab might be missing)
                 if (objectToSpawn == null)

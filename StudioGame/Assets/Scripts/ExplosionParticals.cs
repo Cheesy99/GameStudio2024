@@ -1,10 +1,11 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ParticleController : MonoBehaviour
 {
     public ParticleSystem particlePrefab; // Prefab des Partikelsystems
     private GameObject particleHolder; // Leeres GameObject zur Aufnahme des Partikelsystems
     private ParticleSystem currentParticleSystem; // Aktuelle Instanz des Partikelsystems
+     public Slider waterLevelSlider;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class ParticleController : MonoBehaviour
     void Update()
     {
         // Hier kannst du prüfen, ob der Button gedrückt wurde.
-        if (Input.GetKey(KeyCode.O)) // Du kannst den Tastennamen anpassen.
+        if (Input.GetKeyDown(KeyCode.O)&& waterLevelSlider.value >0) // Du kannst den Tastennamen anpassen.
         {
             // Wenn eine aktuelle Instanz vorhanden ist, deaktiviere sie
             if (currentParticleSystem != null)

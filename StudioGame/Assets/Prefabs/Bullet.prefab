@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 5
+  impactParticles: {fileID: 141433446842962268, guid: 5d38b2361b6e14cd889970708d352c52, type: 3}

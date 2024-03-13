@@ -10,7 +10,9 @@ public class Gun : MonoBehaviour
     public Slider waterLevelSlider;
     
     public float bulletSpeed = 0.3f;
-    public float waterLevel = 100f;
+    public static float  waterLevel = 100f;
+
+   
     
 
     // Gun Sound effect
@@ -40,7 +42,7 @@ public class Gun : MonoBehaviour
            // aktiv sound
             PlaySound();
 
-            waterLevel -= 1;// Decrease the water level
+            waterLevel -= 0.1f;// Decrease the water level
             waterLevelSlider.value = waterLevel;
         }
 

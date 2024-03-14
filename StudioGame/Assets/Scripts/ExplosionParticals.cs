@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 public class ParticleController : MonoBehaviour
 {
     public ParticleSystem particlePrefab; // Prefab des Partikelsystems

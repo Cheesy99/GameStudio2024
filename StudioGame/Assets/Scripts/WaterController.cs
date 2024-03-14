@@ -37,7 +37,7 @@ public class WaterController : MonoBehaviour
     }
     public void GunShot()
     {
-        _waterLevel -= 0.1f;// Decrease the water level
+        _waterLevel -= 2.5f;// Decrease the water level
         waterBar.value = _waterLevel;
     }
 

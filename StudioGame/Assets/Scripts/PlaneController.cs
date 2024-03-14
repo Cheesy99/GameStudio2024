@@ -145,9 +145,15 @@ public class PlaneController : MonoBehaviour
        Vector3 collisionDirection = transform.position - lastPosition;
            collisionDirection.y = 0; // Ignore y axis
        
-           if (collisionDirection.magnitude <= 0.01f) return; // Ignore minor collisions
-       
-           if (transform.position.y <= 5.0f) return;
+           if (collisionDirection.magnitude <= 0.01f){
+               return; // Ignore minor collisions
+}
+
+if (transform.position.y <= 5.0f)
+{
+    Debug.Log("No Here it is the problem");
+    return;
+}
            
         GameManager.getInstance().State = GameState.Lost;
         

@@ -10,8 +10,6 @@ public class FireScript : MonoBehaviour
 {
     public ParticleSystem FireParicParticleSystem;
     private Collider fireCollider;
-    // sound by destroyed the objekt 
-   
     // Start is called before the first frame update
     
     private void Awake()
@@ -45,24 +43,11 @@ public class FireScript : MonoBehaviour
             return;
         var main = FireParicParticleSystem.main;
         float currentSize = main.startSize.constant;
-        currentSize -= 100f; // Decrease the start size by 10 each time a collision occurs
-        if (currentSize <= 0){ 
+        currentSize -= 300f; // Decrease the start size by 10 each time a collision occurs
+        if (currentSize < 0){ 
             currentSize = 0; // Ensure the start size doesn't go below 0
             fireCollider.enabled = false;
-            
         }
         main.startSize = currentSize;
-        
-        // Change the start color to white
-        main.startColor = Color.white;
-    }
-
-
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("Trigger stay detected BULLET: "+ other.gameObject.name);
-        if (other.gameObject.layer != LayerMask.NameToLayer("Bullet"))
-            return;
-        Debug.Log("Trigger stay detected BULLET: "+ other.gameObject.name);
     }
 }

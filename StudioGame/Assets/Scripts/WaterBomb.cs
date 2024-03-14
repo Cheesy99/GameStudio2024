@@ -1,34 +1,23 @@
+
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 
-public class SpawnObjectsOnKeyPress : MonoBehaviour
+public class WaterBomb :  MonoBehaviour
 {
    
     public GameObject objectToSpawn;
-    public UnityEngine.UI.Slider waterLevelSlider;
     
     public int numberOfInstances =10;
     public float spawnRadius = 5;
-    private bool isKeyPressed = false;
-     
-    // gun instanz 
+    
     
      
   
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && Gun.waterLevel >0)
-        {
-            isKeyPressed = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.X)|| Gun.waterLevel <=0)
-        {
-            isKeyPressed = false;
-        }
-
-        if (isKeyPressed)
+        if (Input.GetKey(KeyCode.X) && WaterController.Instance.getWaterLevel() >= 0)
         {
             float stepSize = 0.4f / Mathf.Sqrt(numberOfInstances);
 
@@ -37,13 +26,15 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
                 float x = - 0.5f + (i % 10) * stepSize;
                 float y = - 0.5f + (i / 10) * stepSize;
                 float z = - 0.5f + (i / 100) * stepSize;
-                Gun.waterLevel -=0.1f;
-                 waterLevelSlider.value = Gun.waterLevel;
+                WaterController.Instance.BombDropped();
                 Vector3 spawnPosition = transform.position + transform.right*x +transform.up* y + transform.forward*z;
 
                 // Instantiate the object
-                GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(Random.Range(0f,360f),Random.Range(0f,360f),Random.Range(0f,360f)));
-
+                GameObject spawnedObject = Instantiate(
+                    objectToSpawn, spawnPosition, 
+                    Quaternion.Euler(
+                        Random.Range(0f,360f),Random.Range(0f,360f),Random.Range(0f,360f)));
+                
                 // Check if the objectToSpawn is null (Prefab might be missing)
                 if (objectToSpawn == null)
                 {
@@ -52,7 +43,7 @@ public class SpawnObjectsOnKeyPress : MonoBehaviour
                 }
 
                 // Zerstöre die Instanz nach 3 Sekunden
-                Destroy(spawnedObject, 3f);
+                Destroy(spawnedObject, 5f);
             }
         }
     }

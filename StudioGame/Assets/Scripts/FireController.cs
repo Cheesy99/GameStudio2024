@@ -16,10 +16,7 @@ using UnityEngine.UI;
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else
-            Destroy(gameObject);
 
         fireScripts = new List<FireScript>();
     }
@@ -44,6 +41,13 @@ using UnityEngine.UI;
             var main = FireScript.FireParicParticleSystem.main;
             totalFireSize += main.startSize.constant;
         }
+
         fireBar.value = totalFireSize;
+
+
+        if (fireBar.value == 0)
+            GameManager.getInstance().State = GameState.Won;
+
     }
+
 }

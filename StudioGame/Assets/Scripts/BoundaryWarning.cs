@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Required for UI elements
 
-public class BoundaryControl : MonoBehaviour
+public class BoundaryWarning : MonoBehaviour
 {
     public Canvas warningCanvas; // Assign this in the inspector
 
@@ -19,17 +18,9 @@ public class BoundaryControl : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Plane")) // Assuming the plane has the tag "Plane"
-        {
-            GameManager.getInstance().State = GameState.Lost;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Plane")) // Assuming the plane has the tag "Plane"
+        if (other.gameObject.layer == LayerMask.NameToLayer("Plane")) // Assuming the plane is on the layer "Plane"
         {
             warningCanvas.enabled = true; // Show the warning canvas
         }
@@ -37,7 +28,7 @@ public class BoundaryControl : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Plane")) // Assuming the plane has the tag "Plane"
+        if (other.gameObject.layer == LayerMask.NameToLayer("Plane")) // Assuming the plane is on the layer "Plane"
         {
             warningCanvas.enabled = false; // Hide the warning canvas
         }

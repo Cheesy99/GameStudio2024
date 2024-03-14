@@ -20,7 +20,8 @@ public class WaterController : MonoBehaviour
             _waterLevel = 100f; 
             if (currentScene == "Level_3")
             {
-                _waterLevel = 50f; // Set a different initial water level for Scene3
+                _waterLevel = 5f;
+                waterBar.value = _waterLevel; // Set a different initial water level for Scene3
             }
             else
             {

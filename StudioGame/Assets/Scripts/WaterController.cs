@@ -17,7 +17,8 @@ public class WaterController : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name; 
         if (Instance != null) return;
-        _waterLevel = 100f;
+            _waterLevel = 100f; 
+        
         Instance = this;
     }
     

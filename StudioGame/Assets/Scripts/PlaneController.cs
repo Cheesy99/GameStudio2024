@@ -50,12 +50,16 @@ public class PlaneController : MonoBehaviour
     
     Rigidbody rb;
     AudioSource engineSound;
+    public AudioClip explosionSoundClip; 
+    private AudioSource explosionAudioSource;
     [SerializeField] TextMeshProUGUI hud;
     [SerializeField] Transform propeller;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         engineSound = GetComponent<AudioSource>();
+        explosionAudioSource = gameObject.AddComponent<AudioSource>();
+        explosionAudioSource.clip = explosionSoundClip;
         hasCollided = false;
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name != "Level_1") 
@@ -167,6 +171,8 @@ public class PlaneController : MonoBehaviour
             
         }
 
+        engineSound.Stop();
         hasCollided = true;
+        explosionAudioSource.Play();
     }
 }

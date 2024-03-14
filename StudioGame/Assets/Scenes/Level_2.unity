@@ -1355,6 +1355,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1410007741548002881, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 740736996}
+    - target: {fileID: 1410007741548002881, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
       propertyPath: warningPanel
       value: 
       objectReference: {fileID: 740736996}
@@ -1363,11 +1367,23 @@ PrefabInstance:
       value: Bourndries
       objectReference: {fileID: 0}
     - target: {fileID: 2382934033552482327, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 740736996}
+    - target: {fileID: 2382934033552482327, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
       propertyPath: warningPanel
       value: 
       objectReference: {fileID: 740736996}
     - target: {fileID: 3259362838437308040, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 740736996}
+    - target: {fileID: 3259362838437308040, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
       propertyPath: warningPanel
+      value: 
+      objectReference: {fileID: 740736996}
+    - target: {fileID: 5685772682181528375, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}
+      propertyPath: panel
       value: 
       objectReference: {fileID: 740736996}
     - target: {fileID: 5685772682181528375, guid: 5fe2538de179e0445a51a9440d5ed44b, type: 3}

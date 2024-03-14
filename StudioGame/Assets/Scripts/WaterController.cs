@@ -18,7 +18,14 @@ public class WaterController : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name; 
         if (Instance != null) return;
             _waterLevel = 100f; 
-        
+            if (currentScene == "Level_3")
+            {
+                _waterLevel = 50f; // Set a different initial water level for Scene3
+            }
+            else
+            {
+                _waterLevel = 100f; // Set the initial water level to 100 for other scenes
+            }
         Instance = this;
     }
     

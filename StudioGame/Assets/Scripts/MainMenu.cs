@@ -3,12 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
     public GameObject targetObject;
-    
+    public float rotationSpeed = 20f;
+
     private void Awake()
     {
         GameManager.getInstance().State = GameState.Menu;
+
+        // Ensure the targetObject is set and active
+        if (targetObject != null)
+        {
+            targetObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Target object is not set in MainMenu script.");
+        }
     }
 
     public void PlayGame()
@@ -16,16 +26,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync("Level_1");
         GameManager.getInstance().State = GameState.Playing;
     }
-    
+
     public void QuitGame()
     {
         Application.Quit();
     }
-    
-    
-
-    // Public variable to adjust rotation speed in the Unity Editor
-    public float rotationSpeed = 50f;
 
     void Update()
     {
@@ -39,5 +44,4 @@ public class MainMenu : MonoBehaviour
             Debug.LogWarning("Target object is not set in RotateObject script.");
         }
     }
-}  
-
+}

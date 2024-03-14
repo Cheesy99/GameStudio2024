@@ -43,7 +43,7 @@ public class FireScript : MonoBehaviour
             return;
         var main = FireParicParticleSystem.main;
         float currentSize = main.startSize.constant;
-        currentSize -= 300f; // Decrease the start size by 10 each time a collision occurs
+        currentSize -= 50f; // Decrease the start size by 10 each time a collision occurs
         if (currentSize < 0){ 
             currentSize = 0; // Ensure the start size doesn't go below 0
             fireCollider.enabled = false;

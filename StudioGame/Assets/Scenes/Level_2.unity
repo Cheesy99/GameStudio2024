@@ -1218,10 +1218,10 @@ MonoBehaviour:
   throwForce: 70
   throwInterval: 3
   destroyDelay: 8
-  minForwardSpeed: -100
-  maxForwardSpeed: 100
-  minRightSpeed: -100
-  maxRightSpeed: 100
+  minForwardSpeed: -150
+  maxForwardSpeed: 150
+  minRightSpeed: -150
+  maxRightSpeed: 150
   minUpSpeed: 100
   maxUpSpeed: 150
   maxInstances: 10

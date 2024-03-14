@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FailedScreen : MonoBehaviour
+public class FailedWonScreen : MonoBehaviour
 {
     public GameObject failedPanel;
 
@@ -37,8 +37,13 @@ public class FailedScreen : MonoBehaviour
         GameManager.getInstance().State = GameState.Menu;
     }
 
-    public void NextGame()
+    public void LoadLevel_2()
     {
         SceneManager.LoadScene("Level_2");
+    }
+
+    public void LoadLevel_3()
+    {
+        SceneManager.LoadScene("Level_3");
     }
 }

@@ -1225,6 +1225,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1473608650747271421, guid: fed3e7c9c8233a64998a256b56eede1e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4103823514047936875}
+    - target: {fileID: 1473608650747271421, guid: fed3e7c9c8233a64998a256b56eede1e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473608650747271421, guid: fed3e7c9c8233a64998a256b56eede1e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FailedWonScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3479398628719231572, guid: fed3e7c9c8233a64998a256b56eede1e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1326,6 +1338,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed3e7c9c8233a64998a256b56eede1e, type: 3}
+--- !u!114 &4103823514047936875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8651404600735272939, guid: fed3e7c9c8233a64998a256b56eede1e, type: 3}
+  m_PrefabInstance: {fileID: 4103823514047936874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fde4685f3f7f343a45923edb9a8f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8421172936286988370
 PrefabInstance:
   m_ObjectHideFlags: 0

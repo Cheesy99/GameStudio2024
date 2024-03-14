@@ -1216,15 +1216,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToThrow: {fileID: 5669059283440961627, guid: e8665b63242c048bab4dd24a27e61d1f, type: 3}
   throwForce: 70
-  throwInterval: 2
-  destroyDelay: 5
+  throwInterval: 3
+  destroyDelay: 8
   minForwardSpeed: -100
   maxForwardSpeed: 100
   minRightSpeed: -100
   maxRightSpeed: 100
   minUpSpeed: 100
   maxUpSpeed: 150
-  maxInstances: 5
+  maxInstances: 10
 --- !u!65 &1381079750
 BoxCollider:
   m_ObjectHideFlags: 0

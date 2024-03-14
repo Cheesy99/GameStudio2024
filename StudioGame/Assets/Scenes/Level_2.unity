@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.4669811, g: 0.7810813, b: 1, a: 0.5803922}
+  m_FogColor: {r: 0.4669811, g: 0.7810813, b: 1, a: 0.34117648}
   m_FogMode: 2
-  m_FogDensity: 0.002
+  m_FogDensity: 0.0009
   m_LinearFogStart: 0.2
   m_LinearFogEnd: 0.6
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: objectToSpawn
       value: 
       objectReference: {fileID: 2070505409830136749, guid: 8bd93d6d5ac6a4fd6a1ea0215035d975, type: 3}
+    - target: {fileID: 1702008610427920445, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
     - target: {fileID: 5836287245658958843, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: m_Name
       value: Aircraft
@@ -401,6 +405,10 @@ PrefabInstance:
       propertyPath: compassImage
       value: 
       objectReference: {fileID: 320649989}
+    - target: {fileID: 8494046763691990464, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
     - target: {fileID: 9203888056196225909, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: m_Name
       value: WaterBomb

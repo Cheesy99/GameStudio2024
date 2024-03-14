@@ -58,7 +58,7 @@ public class PlaneController : MonoBehaviour
         engineSound = GetComponent<AudioSource>();
         hasCollided = false;
         Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "Level_2") // replace "Level2" with the actual name of your level 2 scene
+        if (currentScene.name != "Level_1") 
         {
             throttle = 100f;
         }

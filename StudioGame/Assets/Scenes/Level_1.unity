@@ -1076,6 +1076,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 973126582}
     - target: {fileID: 1702008610427920445, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
+    - target: {fileID: 1702008610427920445, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: waterLevelSlider
       value: 
       objectReference: {fileID: 973126582}
@@ -1143,6 +1147,10 @@ PrefabInstance:
       propertyPath: waterLevelSlider
       value: 
       objectReference: {fileID: 973126582}
+    - target: {fileID: 8494046763691990464, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
     - target: {fileID: 8494046763691990464, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: waterLevelSlider
       value: 

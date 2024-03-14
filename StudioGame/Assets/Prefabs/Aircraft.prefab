@@ -123,7 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 4408857216798912450}
   bulletPrefab: {fileID: 7023597674582011523, guid: a8fb13652e4ff447e933ca91ee77ef2e, type: 3}
-  waterLevelSlider: {fileID: 0}
   bulletSpeed: 10
   soundClip: {fileID: 8300000, guid: 3812ec0ee2f17ef41b0c5ec2438d5c69, type: 3}
 --- !u!1 &1336250950108369853
@@ -171,7 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 5112403345868107899, guid: d87eacee9f5314357b4730bcc8045a2b, type: 3}
-  waterLevelSlider: {fileID: 0}
 --- !u!1 &1908897654224423288
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 6868338049452593727}
   bulletPrefab: {fileID: 7023597674582011523, guid: a8fb13652e4ff447e933ca91ee77ef2e, type: 3}
-  waterLevelSlider: {fileID: 0}
   bulletSpeed: 10
   soundClip: {fileID: 8300000, guid: 3812ec0ee2f17ef41b0c5ec2438d5c69, type: 3}
 --- !u!1 &8139416848163696192
@@ -951,7 +948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 5112403345868107899, guid: d87eacee9f5314357b4730bcc8045a2b, type: 3}
-  waterLevelSlider: {fileID: 0}
 --- !u!1 &9095039582208074232
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +990,7 @@ GameObject:
   - component: {fileID: 4576789332609439678}
   - component: {fileID: 311791580790232518}
   m_Layer: 0
-  m_Name: spawnPoint
+  m_Name: WaterBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,6 +1024,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 0}
-  waterLevelSlider: {fileID: 0}
   numberOfInstances: 10
   spawnRadius: 5

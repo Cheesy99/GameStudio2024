@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Vulkan : MonoBehaviour
 {
+    public ParticleSystem Fire;
     public GameObject prefabToThrow;
     public float throwForce = 20f; // Ändere die Wurfkraft hier
     public float throwInterval = 2f; // Zeitintervall zwischen den Würfen
@@ -28,6 +29,12 @@ public class Vulkan : MonoBehaviour
             }
             throwTimer = 0f;
         }
+        
+        if (Fire.main.startSize.constant <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+        
     }
 
     void ThrowPrefab()

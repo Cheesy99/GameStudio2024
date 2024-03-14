@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaterController : MonoBehaviour
 {
@@ -10,23 +11,16 @@ public class WaterController : MonoBehaviour
     public WaterGun gun;
     public WaterBomb waterBomb;
     private float  _waterLevel;
+    
 
     private void Awake()
     {
+        string currentScene = SceneManager.GetActiveScene().name; 
         if (Instance != null) return;
         _waterLevel = 100f;
         Instance = this;
     }
-
-    public void GunRegisterToWaterBar(WaterGun gun)
-    {
-        this.gun = gun;
-    }
     
-    public void BombRegisterToWaterBar(WaterBomb bomb)
-    {
-        waterBomb = bomb;
-    }
 
     public float getWaterLevel()
     {
@@ -49,4 +43,12 @@ public class WaterController : MonoBehaviour
         if(_waterLevel <= 0)
             GameManager.getInstance().State = GameState.Lost;
     }
+    
+        public void FillWater(float amount)
+        {
+            _waterLevel += amount; // Increase the water level
+            _waterLevel = Mathf.Min(_waterLevel, 100f); // Ensure the water level does not exceed 100
+
+            waterBar.value = _waterLevel; // Update the water bar value
+        }
 }

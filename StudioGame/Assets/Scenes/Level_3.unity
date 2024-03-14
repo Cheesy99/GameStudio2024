@@ -123,6 +123,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &25692743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25692746}
+  - component: {fileID: 25692745}
+  - component: {fileID: 25692744}
+  m_Layer: 0
+  m_Name: WaterFiller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &25692744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25692743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8ac023a7763cb499cdd739ce955eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &25692745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25692743}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &25692746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25692743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500, y: 5, z: 500}
+  m_LocalScale: {x: 5000, y: 1, z: 5000}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &47270506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,6 +609,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 311791580790232518, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 2070505409830136749, guid: 8bd93d6d5ac6a4fd6a1ea0215035d975, type: 3}
     - target: {fileID: 470151407456661696, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
       value: 0.489
@@ -565,11 +635,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608321066694963521, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 115
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 6608321066694963521, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1137
+      value: 1127.8
       objectReference: {fileID: 0}
     - target: {fileID: 6608321066694963521, guid: d4306eb6d7df7a14b930ad850152b8b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1763,3 +1833,4 @@ SceneRoots:
   - {fileID: 1501852955}
   - {fileID: 1002167648}
   - {fileID: 243512700}
+  - {fileID: 25692746}

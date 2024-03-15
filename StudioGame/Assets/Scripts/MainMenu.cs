@@ -11,15 +11,6 @@ public class MainMenu : MonoBehaviour
     {
         GameManager.getInstance().State = GameState.Menu;
         onLevel = "Level_1";
-        // Ensure the targetObject is set and active
-        if (targetObject != null)
-        {
-            targetObject.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("Target object is not set in MainMenu script.");
-        }
     }
 
     public void PlayGame()

@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Level_1");
+        SceneManager.LoadSceneAsync(onLevel);
         GameManager.getInstance().State = GameState.Playing;
     }
 

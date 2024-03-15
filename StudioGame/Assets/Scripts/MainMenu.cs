@@ -5,11 +5,12 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject targetObject;
     public float rotationSpeed = 20f;
+    private string onLevel;
 
     private void Awake()
     {
         GameManager.getInstance().State = GameState.Menu;
-
+        onLevel = "Level_1";
         // Ensure the targetObject is set and active
         if (targetObject != null)
         {
@@ -43,5 +44,16 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogWarning("Target object is not set in RotateObject script.");
         }
+    }
+
+    public void HandleInputData(int var)
+    {
+        onLevel = var switch
+        {
+            0 => "Level_1",
+            1 => "Level_2",
+            2 => "Level_3",
+            _ => onLevel
+        };
     }
 }
